@@ -20,5 +20,3 @@ set AUTH_CODE="%PROGRAMFILES(X86)%\Google\Chrome Remote Desktop\CurrentVersion\r
 
 
 c:\Users\runneradmin\Downloads\AnyDesk.exe
-:: to keep the process running
-pause
