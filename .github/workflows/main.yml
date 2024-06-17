@@ -21,7 +21,9 @@ jobs:
     - run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
     - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
     - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "Anilanil123@" -Force)
-    - name: Download Anydesk
-      run: Invoke-WebRequest https://download.anydesk.com/AnyDesk.exe -OutFile c:\users\runneradmin\Desktop\AnyDesk.exe
+    - run: Invoke-WebRequest -Uri "https://dl.google.com/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi" -OutFile "chromeremotedesktophost.msi"
+    - run: Start-Process msiexec.exe -Wait -ArgumentList "/i chromeremotedesktophost.msi /quiet"
+
+    - run: & "${Env:PROGRAMFILES(X86)}\Google\Chrome Remote Desktop\CurrentVersion\remoting_start_host.exe" --code="4/0ATx3LY5AGn32Iv-5wb4r9tmBVLTKp4k3LIdzHiy7vsQaCTJk8gr4KndT8sTB9B9RBswmkg" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$Env:COMPUTERNAME
     - name: Create Tunnel
       run: .\ngrok\ngrok.exe tcp 3389
