@@ -1,1 +1,4 @@
-Change and update_and_run.txt file and commit to start the build and run Windows VPS.
+## - Go to https://remotedesktop.google.com/headless and copy the AUTH code.
+## - Then go to https://github.com/htdanilgitvps/vps/blob/main/exec.bat and edit it by replacing AUTH_CODE with the code copied from the google headless.
+## - Then commit the changes.
+## - Then go to Actions -> CI (https://github.com/htdanilgitvps/vps/actions/workflows/main.yml) to check the status.
