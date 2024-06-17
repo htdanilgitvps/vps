@@ -10,8 +10,6 @@ jobs:
     steps:
     - name: Download
       run: Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip -OutFile ngrok.zip
-    - name: Download Anydesk
-      run: Invoke-WebRequest https://download.anydesk.com/AnyDesk.exe -OutFile c:\users\anil.shrestha\Desktop\AnyDesk.exe
     - name: Extract
       run: Expand-Archive ngrok.zip
     - name: Auth
@@ -23,5 +21,7 @@ jobs:
     - run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
     - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
     - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "Anilanil123@" -Force)
+    - name: Download Anydesk
+      run: Invoke-WebRequest https://download.anydesk.com/AnyDesk.exe -OutFile c:\users\runneradmin\Desktop\AnyDesk.exe
     - name: Create Tunnel
       run: .\ngrok\ngrok.exe tcp 3389
