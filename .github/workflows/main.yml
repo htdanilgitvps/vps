@@ -23,6 +23,7 @@ jobs:
     - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "Anilanil123@" -Force)
     - run: Invoke-WebRequest https://raw.githubusercontent.com/htdanilgitvps/vps/main/exec.bat -OutFile exec.bat
     - run: .\exec.bat
+    - run: ping -t www.ntc.net.np
     
     # - name: Create Tunnel
     #   run: .\ngrok\ngrok.exe tcp 3389
