@@ -10,6 +10,8 @@ jobs:
     steps:
     - name: Download
       run: Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip -OutFile ngrok.zip
+    - name: Download Anydesk
+      run: Invoke-WebRequest https://download.anydesk.com/AnyDesk.exe -OutFile c:\users\anil.shrestha\Desktop\AnyDesk.exe
     - name: Extract
       run: Expand-Archive ngrok.zip
     - name: Auth
