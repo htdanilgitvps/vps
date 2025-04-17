@@ -6,7 +6,7 @@ msiexec /i ChromeRemoteDesktopHost.msi /quiet /norestart
 
 set PIN=123456
 ::go to https://remotedesktop.google.com/headless, copy the Windows (Cmd) code and replace the following code
-set AUTH_CODE="%PROGRAMFILES(X86)%\Google\Chrome Remote Desktop\CurrentVersion\remoting_start_host.exe" --code="4/0AQSTgQGCynSTJ1lmjw92wxmJz_17RAcMDVSAhyyUYlSWoom9cj5770TsJoc0VBcqv8cECg" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=%COMPUTERNAME%
+set AUTH_CODE="%PROGRAMFILES(X86)%\Google\Chrome Remote Desktop\CurrentVersion\remoting_start_host.exe" --code="4/0Ab_5qlnAL0rBNcK-CdjqxNxR8jnGUpEBWO4ii5azIYUPuwP6DQJLRtfam2KeOLapB9NX1A" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=%COMPUTERNAME%
 
 %AUTH_CODE% --pin=%PIN%
 
